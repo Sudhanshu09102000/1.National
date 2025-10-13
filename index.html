@@ -481,7 +481,6 @@ window.addEventListener('DOMContentLoaded', ()=>{
   document.getElementById('prevBtn').addEventListener('click', ()=>{ if(currentQuestion>1) loadQuestion(currentQuestion-1); });
   document.getElementById('clearBtn').addEventListener('click', clearResponse);
   document.getElementById('jumpBtn').addEventListener('click', jumpTo);
-  document.getElementById('showReviewBtn').addEventListener('click', showReviewPanel);
   document.getElementById('submitBtn').addEventListener('click', ()=>{ if(confirm('Submit test?')) submitTest(false); });
 });
 
