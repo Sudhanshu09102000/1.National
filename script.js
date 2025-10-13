@@ -1,12 +1,4 @@
-/* current_affairs_71.js
-   71 MCQs created from the provided "CURRENT AFFAIRS FOR SSC EXAMS 2025 - NATIONAL NEWS" notes.
-   Copy this entire file into your project and import it where you load your quiz logic.
-*/
 
-const totalQuestions = 71;
-let currentQuestion = 1;
-const answers = {};
-let totalSeconds = 0;
 
 const questions = {
   1: {
@@ -369,105 +361,77 @@ const questions = {
 
 
 const explanations = {
-  1: "Mudra Yojana limit doubled; Tarun Plus introduced and overall upper limit noted as ₹20 lakh.",
-  2: "Vizhinjam International Seaport is in Kerala — deep-water transshipment port.",
-  3: "Navdurga missile testing range opened at Nagayanka, Andhra Pradesh — India's third missile range.",
-  4: "India hosted the 12th Global Space Exploration Conference in New Delhi.",
-  5: "Dirang (Arunachal Pradesh) hosts the North East's first geothermal production well.",
-  6: "Operation Sindoor targeted nine sites across Pakistan and Pakistan-occupied Kashmir (POK).",
-  7: "A Cheetah Conservation Corridor will link Madhya Pradesh and Rajasthan.",
-  8: "D9 9000 HP electric freight locomotive was launched from Dahod factory (Gujarat).",
-  9: "CBI launched Operation Hawk focused on cybercrime and cyber fraud.",
-  10: "Bharat Pol portal (CBI) facilitates direct connection with Interpol and international investigations.",
-  11: "Government announced 2025 as the Year of Defence Reforms to modernise the armed forces.",
-  12: "Gramin Bharat Mahotsav was inaugurated at Bharat Mandapam, New Delhi.",
-  13: "Karthikeyan (Kamakya Karthikeyan) became the youngest female to climb the Seven Summits.",
-  14: "PM distributed ~65 lakh property cards under Swamitva scheme (survey of villages, mapping of land ownership).",
-  15: "AYUSH visa introduced for foreign nationals seeking treatment under India’s traditional medicine systems.",
-  16: "Kashi Tamil Sangam (third edition) was inaugurated in Varanasi (Kashi).",
-  17: "SwaRail Super App launched by Indian Railways to consolidate services into one app.",
-  18: "SBI launched Asmita Loan Scheme — collateral-free loans for women entrepreneurs.",
-  19: "The Pamban (Rameswaram) vertical lift rail bridge allows ships to pass when lifted; cost approx ₹550 crore.",
-  20: "Begumpet Railway Station (Hyderabad) will be fully operated by women employees.",
-  21: "Purnima Devi Burman, wildlife biologist, was featured in Time's Women of the Year 2025 list.",
-  22: "Chirang Ripu Elephant Reserve (Assam) was notified as a national park.",
-  23: "Six wetlands (including Sakrakottai Bird Sanctuary) were designated Ramsar sites in the recent list.",
-  24: "Vibrant Villages Programme launched with allocation approx ₹6,839 crore to develop left-out border villages.",
-  25: "Lakundi Group of Monuments (Western Chalukya temples) proposed for UNESCO tentative listing — located in Karnataka.",
-  26: "'Hamari Parampara Hamari Virasat' art/heritage initiative launched by Ministry of Panchayati Raj.",
-  27: "PM Modi visited Wat Pho temple in Bangkok during foreign visit.",
-  28: "Poshan Abhiyaan (launched 2018 from Jhunjhunu) — 7th edition launched to address malnutrition.",
-  29: "India’s first High Altitude Atmospheric and Climate Research Centre set up in Jammu & Kashmir (high Himalayan centre).",
-  30: "Union Health Minister initiated campaign to eliminate measles and rubella by 2026.",
-  31: "Dr Bhimrao Ambedkar Wildlife Sanctuary was established in Madhya Pradesh.",
-  32: "Tunnel T8 (Rishikesh–Karanprayag rail project) approx 14½ km — India’s longest rail tunnel.",
-  33: "Notes report sex ratio at birth improved to around 930 females per 1000 males.",
-  34: "India’s Total Fertility Rate reported at approx 2.0.",
-  35: "Government opened space sector to 100% FDI under automatic route.",
-  36: "ISFR (India State of Forest Report) figures: forest cover ~21.76%, tree cover ~3.41%.",
-  37: "India hosted the first Asian Buddhist Summit in New Delhi.",
-  38: "Anushakti Vidyut Nigam approved to lead nuclear power generation initiatives.",
-  39: "SCO meeting referenced in the notes was held in Islamabad, Pakistan; EAM S. Jaishankar attended.",
-  40: "CSIR Mega Innovation Complex (first) inaugurated in Mumbai.",
-  41: "Cruise Bharat Mission launched to boost cruise tourism and double traffic by 2029.",
-  42: "Five additional classical languages approved (examples include Marathi) increasing total to 11.",
-  43: "National Mission on Edible Oil Seeds approved to make India more self-reliant (target 2030–31 era).",
-  44: "Supreme Court ruled caste-based discriminatory practices like forced segregation/manual labour unconstitutional.",
-  45: "WAVES (World Audio & Visual Entertainment Summit) held in Mumbai.",
-  46: "FCI launched 'Anna Darpan' to modernize supply chain management operations.",
-  47: "eShram portal launched as a one-stop digital platform for unorganised workers.",
-  48: "Mankidiya/Mandkiya community accorded PVTG status and habitat rights.",
-  49: "India’s first coal gallery inaugurated at the National Science Centre, New Delhi.",
-  50: "Four astronauts named for Gaganyaan crew (one example: Group Captain P Balakrishnan Nair).",
-  51: "India’s National Dolphin Research Centre inaugurated in Patna (Gangetic dolphin national aquatic animal).",
-  52: "Government allocated ~₹6,212 crore for recapitalisation of Regional Rural Banks (RRBs).",
-  53: "RRB recapitalisation shareholding typically: central govt 50%, sponsor bank 35%, state govt 15%.",
-  54: "Prototype Fast Breeder Reactor (PFBR) at Kalpakkam — indigenous breeder reactor inaugurated.",
-  55: "Z-Morh Tunnel in Sonam, J&K (altitude ~8,650 ft) improves all-weather connectivity.",
-  56: "National Turmeric Board launched by Commerce & Industry Minister Piyush Goyal.",
-  57: "Aero India (15th edition) held at Yelahanka Air Force Station, Bengaluru.",
-  58: "First baby of 'Generation Beta' mentioned in notes (Frankie Remru Zedeng) hails from Mizoram.",
-  59: "INROADS project (Indian Natural Rubber Operation for Assisted Development) secured ~₹100 crore for NE rubber quality enhancement.",
-  60: "Indore and Udaipur included in the Global List of Accredited Wetland Cities under Ramsar Convention.",
-  61: "Musi River historic building from Hyderabad was included in the 2025 World Monuments Watch list.",
-  62: "National Critical Mineral Mission approved with approx ₹16,300 crore outlay to secure critical minerals.",
-  63: "Port Blair's new name announced as Shri Vijayapuram (Andaman & Nicobar).",
-  64: "Vanara (Vantara) Animal Rescue Centre inaugurated in Jamnagar, Gujarat (Ambani-supported facility).",
-  65: "IRCTC and Indian Railway Finance Corporation (IRFC) granted Navratna PSU status (25th & 26th).",
-  66: "India unveiled first 3 nm chip design centre(s) in Noida and Bengaluru.",
-  67: "Sahakar cooperative ride-hailing service launched under Ministry of Cooperation (Amit Shah).",
-  68: "Supreme Court set a maximum period (3 months) for Governors to act on certain reserved bills.",
-  69: "PM laid foundation stone for Ken-Betwa river linking national project near Khajuraho, Madhya Pradesh.",
-  70: "Supreme Court issued guidelines reinforcing prohibition of child marriage; personal laws cannot override child-protection laws.",
-  71: "Nitin Gadkari inaugurated a bio-bitumen based highway stretch on NH-44 (Mansar–Nagpur) to reduce crude dependence."
+ 1: { text: "Mudra Yojana limit doubled; Tarun Plus introduced and overall upper limit noted as ₹20 lakh.", image: "" },
+2: { text: "Vizhinjam International Seaport is in Kerala — deep-water transshipment port.", image: "" },
+3: { text: "Navdurga missile testing range opened at Nagayanka, Andhra Pradesh — India's third missile range.", image: "" },
+4: { text: "India hosted the 12th Global Space Exploration Conference in New Delhi.", image: "" },
+5: { text: "Dirang (Arunachal Pradesh) hosts the North East's first geothermal production well.", image: "" },
+6: { text: "Operation Sindoor targeted nine sites across Pakistan and Pakistan-occupied Kashmir (POK).", image: "" },
+7: { text: "A Cheetah Conservation Corridor will link Madhya Pradesh and Rajasthan.", image: "" },
+8: { text: "D9 9000 HP electric freight locomotive was launched from Dahod factory (Gujarat).", image: "" },
+9: { text: "CBI launched Operation Hawk focused on cybercrime and cyber fraud.", image: "" },
+10: { text: "Bharat Pol portal (CBI) facilitates direct connection with Interpol and international investigations.", image: "" },
+11: { text: "Government announced 2025 as the Year of Defence Reforms to modernise the armed forces.", image: "" },
+12: { text: "Gramin Bharat Mahotsav was inaugurated at Bharat Mandapam, New Delhi.", image: "" },
+13: { text: "Karthikeyan (Kamakya Karthikeyan) became the youngest female to climb the Seven Summits.", image: "" },
+14: { text: "PM distributed ~65 lakh property cards under Swamitva scheme (survey of villages, mapping of land ownership).", image: "" },
+15: { text: "AYUSH visa introduced for foreign nationals seeking treatment under India’s traditional medicine systems.", image: "" },
+16: { text: "Kashi Tamil Sangam (third edition) was inaugurated in Varanasi (Kashi).", image: "" },
+17: { text: "SwaRail Super App launched by Indian Railways to consolidate services into one app.", image: "" },
+18: { text: "SBI launched Asmita Loan Scheme — collateral-free loans for women entrepreneurs.", image: "" },
+19: { text: "The Pamban (Rameswaram) vertical lift rail bridge allows ships to pass when lifted; cost approx ₹550 crore.", image: "" },
+20: { text: "Begumpet Railway Station (Hyderabad) will be fully operated by women employees.", image: "" },
+21: { text: "Purnima Devi Burman, wildlife biologist, was featured in Time's Women of the Year 2025 list.", image: "" },
+22: { text: "Chirang Ripu Elephant Reserve (Assam) was notified as a national park.", image: "" },
+23: { text: "Six wetlands (including Sakrakottai Bird Sanctuary) were designated Ramsar sites in the recent list.", image: "" },
+24: { text: "Vibrant Villages Programme launched with allocation approx ₹6,839 crore to develop left-out border villages.", image: "" },
+25: { text: "Lakundi Group of Monuments (Western Chalukya temples) proposed for UNESCO tentative listing — located in Karnataka.", image: "" },
+26: { text: "'Hamari Parampara Hamari Virasat' art/heritage initiative launched by Ministry of Panchayati Raj.", image: "" },
+27: { text: "PM Modi visited Wat Pho temple in Bangkok during foreign visit.", image: "" },
+28: { text: "Poshan Abhiyaan (launched 2018 from Jhunjhunu) — 7th edition launched to address malnutrition.", image: "" },
+29: { text: "India’s first High Altitude Atmospheric and Climate Research Centre set up in Jammu & Kashmir (high Himalayan centre).", image: "" },
+30: { text: "Union Health Minister initiated campaign to eliminate measles and rubella by 2026.", image: "" },
+31: { text: "Dr Bhimrao Ambedkar Wildlife Sanctuary was established in Madhya Pradesh.", image: "" },
+32: { text: "Tunnel T8 (Rishikesh–Karanprayag rail project) approx 14½ km — India’s longest rail tunnel.", image: "" },
+33: { text: "Notes report sex ratio at birth improved to around 930 females per 1000 males.", image: "" },
+34: { text: "India’s Total Fertility Rate reported at approx 2.0.", image: "" },
+35: { text: "Government opened space sector to 100% FDI under automatic route.", image: "" },
+36: { text: "ISFR (India State of Forest Report) figures: forest cover ~21.76%, tree cover ~3.41%.", image: "" },
+37: { text: "India hosted the first Asian Buddhist Summit in New Delhi.", image: "" },
+38: { text: "Anushakti Vidyut Nigam approved to lead nuclear power generation initiatives.", image: "" },
+39: { text: "SCO meeting referenced in the notes was held in Islamabad, Pakistan; EAM S. Jaishankar attended.", image: "" },
+40: { text: "CSIR Mega Innovation Complex (first) inaugurated in Mumbai.", image: "" },
+41: { text: "Cruise Bharat Mission launched to boost cruise tourism and double traffic by 2029.", image: "" },
+42: { text: "Five additional classical languages approved (examples include Marathi) increasing total to 11.", image: "" },
+43: { text: "National Mission on Edible Oil Seeds approved to make India more self-reliant (target 2030–31 era).", image: "" },
+44: { text: "Supreme Court ruled caste-based discriminatory practices like forced segregation/manual labour unconstitutional.", image: "" },
+45: { text: "WAVES (World Audio & Visual Entertainment Summit) held in Mumbai.", image: "" },
+46: { text: "FCI launched 'Anna Darpan' to modernize supply chain management operations.", image: "" },
+47: { text: "eShram portal launched as a one-stop digital platform for unorganised workers.", image: "" },
+48: { text: "Mankidiya/Mandkiya community accorded PVTG status and habitat rights.", image: "" },
+49: { text: "India’s first coal gallery inaugurated at the National Science Centre, New Delhi.", image: "" },
+50: { text: "Four astronauts named for Gaganyaan crew (one example: Group Captain P Balakrishnan Nair).", image: "" },
+51: { text: "India’s National Dolphin Research Centre inaugurated in Patna (Gangetic dolphin national aquatic animal).", image: "" },
+52: { text: "Government allocated ~₹6,212 crore for recapitalisation of Regional Rural Banks (RRBs).", image: "" },
+53: { text: "RRB recapitalisation shareholding typically: central govt 50%, sponsor bank 35%, state govt 15%.", image: "" },
+54: { text: "Prototype Fast Breeder Reactor (PFBR) at Kalpakkam — indigenous breeder reactor inaugurated.", image: "" },
+55: { text: "Z-Morh Tunnel in Sonam, J&K (altitude ~8,650 ft) improves all-weather connectivity.", image: "" },
+56: { text: "National Turmeric Board launched by Commerce & Industry Minister Piyush Goyal.", image: "" },
+57: { text: "Aero India (15th edition) held at Yelahanka Air Force Station, Bengaluru.", image: "" },
+58: { text: "First baby of 'Generation Beta' mentioned in notes (Frankie Remru Zedeng) hails from Mizoram.", image: "" },
+59: { text: "INROADS project (Indian Natural Rubber Operation for Assisted Development) secured ~₹100 crore for NE rubber quality enhancement.", image: "" },
+60: { text: "Indore and Udaipur included in the Global List of Accredited Wetland Cities under Ramsar Convention.", image: "" },
+61: { text: "Musi River historic building from Hyderabad was included in the 2025 World Monuments Watch list.", image: "" },
+62: { text: "National Critical Mineral Mission approved with approx ₹16,300 crore outlay to secure critical minerals.", image: "" },
+63: { text: "Port Blair's new name announced as Shri Vijayapuram (Andaman & Nicobar).", image: "" },
+64: { text: "Vanara (Vantara) Animal Rescue Centre inaugurated in Jamnagar, Gujarat (Ambani-supported facility).", image: "" },
+65: { text: "IRCTC and Indian Railway Finance Corporation (IRFC) granted Navratna PSU status (25th & 26th).", image: "" },
+66: { text: "India unveiled first 3 nm chip design centre(s) in Noida and Bengaluru.", image: "" },
+67: { text: "Sahakar cooperative ride-hailing service launched under Ministry of Cooperation (Amit Shah).", image: "" },
+68: { text: "Supreme Court set a maximum period (3 months) for Governors to act on certain reserved bills.", image: "" },
+69: { text: "PM laid foundation stone for Ken-Betwa river linking national project near Khajuraho, Madhya Pradesh.", image: "" },
+70: { text: "Supreme Court issued guidelines reinforcing prohibition of child marriage; personal laws cannot override child-protection laws.", image: "" },
+71: { text: "Nitin Gadkari inaugurated a bio-bitumen based highway stretch on NH-44 (Mansar–Nagpur) to reduce crude dependence.", image: "" }
 };
 
 
-/* Example helper: showExplanation(num)
-   (This assumes you have bootstrap modal with id 'explanationModal' and element id 'explanationContent')
-*/
-function showExplanation(num) {
-  const q = questions[num];
-  const e = explanations[num] || "No explanation provided.";
-  if (!q) return;
-  document.getElementById('explanationContent').innerHTML = `
-    <p><strong>Q${num}.</strong> ${q.text}</p>
-    <p><strong>Options:</strong></p>
-    <ul>
-      ${q.options.map((opt, idx) => `<li>${idx+1}. ${opt}</li>`).join('')}
-    </ul>
-    <p><strong>Correct Answer:</strong> ${q.options[parseInt(q.correct)-1]}</p>
-    <hr>
-    <p><strong>Explanation:</strong> ${e}</p>
-  `;
-  // Show modal (requires bootstrap js)
-  const modalEl = document.getElementById('explanationModal');
-  if (modalEl && typeof bootstrap !== 'undefined') {
-    new bootstrap.Modal(modalEl).show();
-  }
-}
-
-// Export for module usage (if using modules)
-if (typeof module !== 'undefined') {
-  module.exports = { totalQuestions, questions, explanations, showExplanation };
-}
