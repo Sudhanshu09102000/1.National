@@ -480,7 +480,7 @@ window.addEventListener('DOMContentLoaded', ()=>{
   document.getElementById('reviewNextBtn').addEventListener('click', ()=>{ mark(true); });
   document.getElementById('prevBtn').addEventListener('click', ()=>{ if(currentQuestion>1) loadQuestion(currentQuestion-1); });
   document.getElementById('clearBtn').addEventListener('click', clearResponse);
-  document.getElementById('jumpBtn').addEventListener('click', jumpTo);
+  document.getElementById('jumpBtn').addEventListener('click', jumpTo);
   document.getElementById('submitBtn').addEventListener('click', ()=>{ if(confirm('Submit test?')) submitTest(false); });
 });
 
@@ -516,16 +516,38 @@ document.addEventListener("keydown", function (e) {
 });
   
   // Help button functionality
+// Help button functionality with Google Search button
 document.getElementById('helpBtn').addEventListener('click', () => {
+  const q = questions[currentQuestion];
   const e = explanations[currentQuestion];
-  if (e && e.text) {
-    document.getElementById('helpContent').innerHTML = `<p>${e.text}</p>`;
+
+  // If question exists
+  if (q) {
+    // Google search URL (encode the question text)
+    const searchUrl = `https://www.google.com/search?q=${encodeURIComponent(q.text)}`;
+
+    // Explanation text (if available)
+    const helpText = (e && e.text) ? e.text : "No help available for this question.";
+
+    // Build modal HTML content
+    document.getElementById('helpContent').innerHTML = `
+      <p><strong>Q${currentQuestion}.</strong> ${q.text}</p>
+      <hr>
+      <p>${helpText}</p>
+      <div class="text-center mt-3">
+        <a href="${searchUrl}" target="_blank" class="btn btn-primary shadow-sm" style="border-radius:12px; padding:10px 20px; font-weight:600;">
+          🔍 Search it on Google
+        </a>
+      </div>
+    `;
+
     new bootstrap.Modal(document.getElementById('helpModal')).show();
   } else {
     document.getElementById('helpContent').innerHTML = `<p>No help available for this question.</p>`;
     new bootstrap.Modal(document.getElementById('helpModal')).show();
   }
 });
+
 
 
 </script>
